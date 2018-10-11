@@ -12,4 +12,8 @@ public class AddStudentController {
 		addStudentPanel = new AddStudentPanel();
 	}
 	
+	public JPanel getComponent() {
+		return addStudentPanel;
+	}
+	
 }

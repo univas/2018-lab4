@@ -1,5 +1,6 @@
 package br.edu.univas.controller;
 
+import br.edu.univas.listener.TopButtonListener;
 import br.edu.univas.view.MainView;
 
 public class MainController {
@@ -11,7 +12,31 @@ public class MainController {
 	}
 	
 	public void initApp() {
+		mainView.setListener(new TopButtonListener() {
+			
+			@Override
+			public void showListView() {
+				showListStudentPanel();
+			}
+			
+			@Override
+			public void showAddView() {
+				showAddStudentPanel();
+			}
+		});
 		mainView.setVisible(true);
+	}
+	
+	private void showAddStudentPanel() {
+		AddStudentController controller = new AddStudentController();
+		mainView.getCenterPanel().removeAll();
+		mainView.getCenterPanel().add(controller.getComponent());
+		mainView.getCenterPanel().revalidate();
+		//mainView.getCenterPanel().repaint();
+	}
+	
+	private void showListStudentPanel() {
+		
 	}
 	
 }

@@ -75,5 +75,4 @@ public class AddStudentPanel extends JPanel {
 		this.add(phoneTextField, gbc);
 	}
 	
-	
 }
