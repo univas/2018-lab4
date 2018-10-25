@@ -2,6 +2,8 @@ package br.edu.univas.view;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -95,6 +97,13 @@ public class AddStudentPanel extends JPanel {
 		
 		JButton saveButton = new JButton();
 		saveButton.setText("Salvar");
+		saveButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listener.save();
+			}
+		});
 		gbc.gridx = 0;
 		gbc.gridy = 5;
 		gbc.gridwidth = 2;
