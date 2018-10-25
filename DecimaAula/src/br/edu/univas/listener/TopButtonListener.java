@@ -2,8 +2,8 @@ package br.edu.univas.listener;
 
 public interface TopButtonListener {
 
-	public void showAddView();
+	void showAddView();
 	
-	public void showListView();
+	void showListView();
 	
 }

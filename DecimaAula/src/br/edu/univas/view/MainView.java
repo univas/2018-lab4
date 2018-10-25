@@ -42,7 +42,6 @@ public class MainView extends JFrame {
 		
 		centerPanel = new JPanel();
 		centerPanel.setLayout(new BorderLayout());
-		centerPanel.setBackground(Color.BLUE);
 		this.getContentPane().add(centerPanel, BorderLayout.CENTER);
 	}
 	

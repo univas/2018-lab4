@@ -25,6 +25,7 @@ public class MainController {
 			}
 		});
 		mainView.setVisible(true);
+		showAddStudentPanel();
 	}
 	
 	private void showAddStudentPanel() {
@@ -32,7 +33,6 @@ public class MainController {
 		mainView.getCenterPanel().removeAll();
 		mainView.getCenterPanel().add(controller.getComponent());
 		mainView.getCenterPanel().revalidate();
-		//mainView.getCenterPanel().repaint();
 	}
 	
 	private void showListStudentPanel() {
