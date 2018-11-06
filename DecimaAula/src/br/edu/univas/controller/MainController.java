@@ -2,6 +2,8 @@ package br.edu.univas.controller;
 
 import java.awt.Component;
 
+import javax.swing.SwingUtilities;
+
 import br.edu.univas.listener.TopButtonListener;
 import br.edu.univas.view.MainView;
 
@@ -35,12 +37,10 @@ public class MainController {
 	}
 	
 	private void showAddStudentPanel() {
-		addController = new AddStudentController();
 		showPanel(addController.getComponent());
 	}
 	
 	private void showListStudentPanel() {
-		listController = new ListStudentController();
 		showPanel(listController.getComponent());
 	}
 	
@@ -48,6 +48,7 @@ public class MainController {
 		mainView.getCenterPanel().removeAll();
 		mainView.getCenterPanel().add(component);
 		mainView.getCenterPanel().revalidate();
+		SwingUtilities.updateComponentTreeUI(mainView);
 	}
 	
 }

@@ -12,10 +12,11 @@ public class ListStudentController {
 	
 	public ListStudentController() {
 		dao = new StudentDAO();
-		panel = new ListStudentPanel(dao.getAll());
+		panel = new ListStudentPanel();
 	}
 	
 	public Component getComponent() {
+		panel.updateStudents(dao.getAll());
 		return panel;
 	}
 	
