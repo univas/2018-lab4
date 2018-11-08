@@ -1,6 +1,7 @@
 package br.edu.univas.controller;
 
 import java.awt.Component;
+import java.sql.SQLException;
 
 import javax.swing.SwingUtilities;
 
@@ -13,7 +14,7 @@ public class MainController {
 	private ListStudentController listController;
 	private MainView mainView;
 	
-	public MainController() {
+	public MainController() throws SQLException {
 		mainView = new MainView();
 		addController = new AddStudentController();
 		listController = new ListStudentController();

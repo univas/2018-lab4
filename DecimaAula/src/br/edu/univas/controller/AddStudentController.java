@@ -1,5 +1,6 @@
 package br.edu.univas.controller;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class AddStudentController {
 	private StudentDAO dao;
 	private Student student;
 	
-	public AddStudentController() {
+	public AddStudentController() throws SQLException {
 		dao = new StudentDAO();
 		addStudentPanel = new AddStudentPanel();
 		addStudentPanel.setListener(new SaveButtonListener() {
