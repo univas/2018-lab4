@@ -1,6 +1,7 @@
 package br.edu.univas.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,8 +19,8 @@ public class StudentDAO {
 	}
 	
 	public void save(Student student) {
-		String sql = "insert into student (name, email, cpf, phone, address) "
-				+ "values (?, ?, ?, ?, ?)";
+		String sql = "insert into student (name, email, cpf, phone, address, data_nascimento) "
+				+ "values (?, ?, ?, ?, ?, ?)";
 		
 		int index = 1;
 		try {
@@ -29,6 +30,7 @@ public class StudentDAO {
 			statement.setString(index++, student.getCpf());
 			statement.setString(index++, student.getPhone());
 			statement.setString(index++, student.getAddress());
+			statement.setDate(index++, new Date(student.getDataNascimento().getTime()));
 			
 			statement.execute();
 			
@@ -53,6 +55,7 @@ public class StudentDAO {
 				student.setEmail(resultSet.getString("email"));
 				student.setPhone(resultSet.getString("phone"));
 				student.setAddress(resultSet.getString("address"));
+				student.setDataNascimento(resultSet.getDate("data_nascimento"));
 				
 				data.add(student);
 			}

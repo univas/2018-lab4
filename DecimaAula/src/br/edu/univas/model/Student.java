@@ -1,5 +1,7 @@
 package br.edu.univas.model;
 
+import java.util.Date;
+
 public class Student {
 
 	private String name;
@@ -7,6 +9,7 @@ public class Student {
 	private String email;
 	private String address;
 	private String phone;
+	private Date dataNascimento;
 
 	public String getName() {
 		return name;
@@ -46,6 +49,14 @@ public class Student {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	
 }

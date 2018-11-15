@@ -19,6 +19,7 @@ public class AddStudentPanel extends JPanel {
 	private JTextField addressTextField;
 	private JTextField emailTextField;
 	private JTextField phoneTextField;
+	private JTextField birthdayTextField;
 	private SaveButtonListener listener;
 	
 	public AddStudentPanel() {
@@ -95,6 +96,18 @@ public class AddStudentPanel extends JPanel {
 		gbc.weightx = 1.0;
 		this.add(phoneTextField, gbc);
 		
+		JLabel birthdayLabel = new JLabel();
+		birthdayLabel.setText("Data de Nascimento:");
+		gbc.gridx = 0;
+		gbc.gridy = 5;
+		gbc.weightx = 0.0;
+		this.add(birthdayLabel, gbc);
+		
+		birthdayTextField = new JTextField();
+		gbc.gridx = 1;
+		gbc.weightx = 1.0;
+		this.add(birthdayTextField, gbc);
+		
 		JButton saveButton = new JButton();
 		saveButton.setText("Salvar");
 		saveButton.addActionListener(new ActionListener() {
@@ -105,7 +118,7 @@ public class AddStudentPanel extends JPanel {
 			}
 		});
 		gbc.gridx = 0;
-		gbc.gridy = 5;
+		gbc.gridy = 6;
 		gbc.gridwidth = 2;
 		gbc.weightx = 0.0;
 		gbc.anchor = GridBagConstraints.CENTER;
@@ -131,6 +144,10 @@ public class AddStudentPanel extends JPanel {
 
 	public JTextField getPhoneTextField() {
 		return phoneTextField;
+	}
+	
+	public JTextField getBirthdayTextField() {
+		return birthdayTextField;
 	}
 	
 }

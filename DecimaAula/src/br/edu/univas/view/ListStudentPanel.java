@@ -39,6 +39,7 @@ public class ListStudentPanel extends JPanel {
 		columns.add("E-mail");
 		columns.add("Endereço");
 		columns.add("Celular");
+		columns.add("Data de Nascimento");
 	
 		table = new JTable(null, columns);
 		
@@ -64,7 +65,8 @@ public class ListStudentPanel extends JPanel {
 					student.getCpf(),
 					student.getEmail(),
 					student.getAddress(),
-					student.getPhone()
+					student.getPhone(),
+					student.getDataNascimento()
 			});
 		}
 	}
